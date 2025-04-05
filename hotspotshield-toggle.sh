@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 vpn_status() {
     vpn_status=$(hotspotshield status | grep "VPN connection state" | awk '{print $5}')
