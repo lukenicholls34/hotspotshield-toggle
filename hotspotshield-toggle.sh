@@ -21,9 +21,13 @@ confirm_vpn_status_change() {
     while true
         do
         current_vpn_status=$(vpn_status)
-        if [ "$current_vpn_status" == "connected" ] || [ "$current_vpn_status" == "disconnected" ]
+        if [ "$current_vpn_status" == "connected" ] 
             then
-            echo $current_vpn_status
+            echo Active
+            break
+        elif [ "$current_vpn_status" == "disconnected" ] 
+            then
+            echo Inactive
             break
         else
             sleep 0.25
